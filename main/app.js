@@ -28,7 +28,7 @@ function countPostcodeCD(postcodeArray) {
     const sum = postcodeArray.reduce((prv,next) => prv + next);
 
     const cd = (10 - sum % 10)%10;
-    
+
     return {postcodeArray,cd};
 }
 
@@ -73,7 +73,7 @@ function buildBarcodeNumber(barcodeArray) {
     let postcodeNumber =  barcodeArray.barcodeArray.map(barcodeNumber => {
         return tags.indexOf(tags.find(input => input === barcodeNumber));
         });
-    
+
     const cd = tags.indexOf(tags.find(input => input === barcodeArray.cd));
 
   return {postcodeNumber,cd};
